@@ -32,6 +32,9 @@
         padding-right: 10px;
         text-align: bottom;
     }
+    #shorttabs {
+        display: none;
+    }
     #title {
         margin: 10px;
         color: #FF4501;
@@ -47,7 +50,6 @@
         padding-top: 0px;
         padding-right: 20px;
     }
-    
     .menuoption {
         font-size: 2em;
         margin: 10px;
@@ -79,11 +81,11 @@
         padding-right: 10px;
         padding-bottom: 10px;
         padding-left: 15px;
-        /* padding: 15px; */
+        grid-row: 2;
+        grid-column: 1;
         font-size: 4vw;
         color: #FF4501;
         font-family: algerian;
-       
     }
     .newstext {
         padding-top: 10px;
@@ -101,6 +103,7 @@
     }
     .articletitle {
         background-color:#ffce3d;
+        background-size: contain;
         font-family: algerian;
         grid-row: 1;
         grid-column: 1 / 9;
@@ -169,13 +172,13 @@
     }
 
     /* mobile layout */
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: 780px) {
         body {
             margin: 0;
             padding: 0;
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 120px 70px 70px 1fr 1fr 1fr 2fr 2fr 2fr 2fr 1fr 50px;
+            grid-template-rows: 120px 70px 2fr 1fr 1fr 1fr 5.5fr 5.5fr 5.5fr 5.5fr 1fr 50px;
             font-family: Georgia sans-serif;
         }
         .logo {
@@ -193,45 +196,20 @@
             margin: 0;
             text-align: center;
         }
-        #tabs {
+        #shorttabs {
             justify-content: center;
             grid-column: 1;
             flex-direction: row;
             flex-wrap: wrap;
             grid-row: 3;
             text-align: center;
+            display: block;
         }
-        #gamestab {
-            grid-column: 1;
-            grid-row: 3;
-            text-align: left;
-            flex-shrink: 2;
+        #tabs {
+            display: none;
         }
-        #comicstab {
-            grid-column: 1;
-            grid-row: 3;
-            text-align: center;
-            flex-shrink: 2;
-        }
-        #storetab {
-            grid-column: 1;
-            grid-row: 3;
-            text-align: right;
-        }
-        #forumstab {
-            grid-column: 1;
-            grid-row: 3;
-            text-align: left;
-        }
-        #abouttab {
-            grid-column: 1;
-            grid-row: 3;
-            text-align: center;
-        }
-        #jobstab {
-            grid-column: 1;
-            grid-row: 3;
-            text-align: right;
+        .newstext {
+            display: none;
         }
         .login {
             grid-column: 1;
@@ -247,35 +225,55 @@
             padding-top: 5px;
             padding-right: 0;
         }
+        .articletitle {
+            background-color: transparent;
+            font-family: algerian;
+            grid-row: 1;
+            grid-column: 1 / 3;
+            padding-left: 10px;
+            padding-top: 2px;
+        }
         .newstitle {
             grid-column: 1;
             grid-row: 6;
             font-size: 8vw;
             text-align: center;
         }
+        .newsimage {
+            padding-top: 13px;
+            padding-right: 10px;
+            padding-left: 15px;
+            grid-column: 1 / 3;
+            grid-row: 2;
+            text-align: center;
+        }
         .news1 {
             background-color: #F5B400;
             grid-column: 1;
             grid-row: 7;
-            margin-block-end: 5px;
+            margin-block-end: 7px;
+            text-align: center;
         }
         .news2 {
-            background-color: #F5B400;
+            background-color:#ffce3d;
             grid-column: 1;
             grid-row: 8;
-            margin-block-end: 5px;
+            margin-block-end: 7px;
+            text-align: center;
         }
         .news3 {
             background-color: #F5B400;
             grid-column: 1;
             grid-row: 9;
-            margin-block-end: 5px;
+            margin-block-end: 7px;
+            text-align: center;
         }
         .news4 {
-            background-color: #F5B400;
+            background-color:#ffce3d;
             grid-column: 1;
             grid-row: 10;
-            margin-block-end: 5px;
+            margin-block-end: 7px;
+            text-align: center;
         }
         #socialmedia {
             grid-column: 1;
@@ -296,7 +294,9 @@
     }
 </style>
 
-<head> <title>Double Fine</title>
+<head> 
+    <title>Double Fine</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
 <body>
@@ -310,6 +310,9 @@
     <!-- MENU TABS -->
     <div id="tabs">
             <img src="img/tabs.png" alt="Tabs">
+    </div>
+    <div id="shorttabs">
+            <img src="img/tabsshort.png" alt="Tabs">
     </div>
     
     <div class="login">
@@ -328,7 +331,7 @@
         <div class="articletitle" style="flex-wrap: nowrap">
             Broken Age & Grim Fandango Now on Switch
         </div>
-        <div class="newsimage" style="grid-row: 2">
+        <div class="newsimage">
             <img src="img/nintendoSwitch.jpg" alt="Broken Age & Grim Fandango on Switch">
         </div>
         <div class="newstext" style="grid-row:2 grid-column:2">
@@ -339,7 +342,7 @@
         <div class="articletitle" style="flex-wrap: nowrap">
              Presenting: Samurai Gunn 2        
         </div>
-        <div class="newsimage" style="grid-row: 2">
+        <div class="newsimage">
                 <img src="img/samurai.jpg" alt=" Samurai Gunn 2">
             </div>
         <div class="newstext" style="grid-row:2 grid-column:2">
@@ -350,7 +353,7 @@
         <div class="articletitle" style="flex-wrap: nowrap">
             GNOG is Out Today for PC and Mac!
         </div>  
-        <div class="newsimage" style="grid-row: 2">
+        <div class="newsimage">
                 <img src="img/gnog.png" alt="GNOG">
             </div>
         <div class="newstext" style="grid-row:2 grid-column:2">
@@ -361,7 +364,7 @@
         <div class="articletitle" style="flex-wrap: nowrap">
             E3 Trailer for Knights and Bikes!
         </div>  
-        <div class="newsimage" style="grid-row: 2">
+        <div class="newsimage">
                 <img src="img/knights.jpg" alt="E3 Trailer for Knights and Bikes">
             </div>
         <div class="newstext" style="grid-row:2 grid-column:2">
